@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "thongTinDatHang";
+    Layout = "~/Views/Shared/_SpLayout.cshtml";
+}
+
+<form action="/Cart/XLthongTinDatHang" method="post"></form>
+<div class="row">
+    <div class="col">
+        <label for="" style="font-weight: bold;">Mã mh</label>
+        <input type="text" name="mahd" class="form-control" />
+    </div>
+    <div class="col" style="font-weight: bold;">
+        <label for="">Tên nguoi nhan</label>
+        <input type="text" name="tennguoinhan" class="form-control">
+    </div>
+    <div class="col">
+        <label for="" style="font-weight: bold;">dia chi</label>
+        <input type="text" name="diachi" class="form-control">
+    </div>
+    <div class="col">
+        <label for="" style="font-weight: bold;">email</label>
+        <input type="text" name="XuatXu" class="form-control">
+    </div>
+    <div class="col">
+        <label for="" style="font-weight: bold;">sdt</label>
+        <input type="text" name="XuatXu" class="form-control">
+    </div>
+    <div class="col">
+        <label for="" style="font-weight: bold;">ghi chu</label>
+        <input type="text" name="XuatXu" class="form-control">
+    </div>
+    <div class="col">
+        <label for="" style="font-weight: bold;">tong tien</label>
+        <input type="text" name="tongtien" class="form-control">
+    </div>
+</div>
+
+<div class="mt-3">
+    <p>
+        <input type="submit" value="Thêm" />
+    </p>
+</div>

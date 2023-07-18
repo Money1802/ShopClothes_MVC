@@ -1,0 +1,9 @@
+﻿@model IEnumerable<code_web_banhang.Models.Loai>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.TenLoai, "Aotheoloai", "Sanpham", new { @MaLoai = @item.MaLoai }, null)
+        </li>
+    }
+</ul>

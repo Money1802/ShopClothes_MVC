@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "The Hyper Kid";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="product spad">
+    <div class="container">
+        <h2>Sản phẩm mới</h2>
+        <div class="row">
+            @foreach (var p in ViewBag.Tasks)
+            {
+                <div class="col-lg-4 ">
+                    <div class="product__item">
+                        <div class="">
+                            <a href="@Url.Action("Details", "Sanpham", new {@id = p.MaHH}, null)">
+                                <img src="~/images/@p.Hinh" id="img_giua" alt="...">
+                            </a>
+                        </div>
+                        <div class="product__item__text">
+                            <h6>@p.TenHH</h6>
+                            <a href="@Url.Action("ThemGioHang", "Cart", new { idAo = p.MaHH, strURL = Request.Url.ToString() })" class="add-cart">+ Thêm vào giỏ hàng</a>
+                            <h5>@String.Format("{0:0,0 VNĐ}", p.DonGia)</h5>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+

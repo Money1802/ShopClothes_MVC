@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Fashion">
+    <meta name="keywords" content="Fashion, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/css/styse_Miu.css" type="text/css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css" />
+
+
+
+
+
+</head>
+
+<body>
+
+
+    @*<div id="preloder">
+            <div class="loader"></div>
+        </div>*@
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="@Url.Action("FormLogin", "Login")">Đăng nhập</a>
+                <a href="#">FAQs</a>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+
+            <a href="@Url.Action("Index", "Cart")">
+                @Html.Action("GiohangPartial", "Cart", null)
+            </a>
+            @Html.Partial("_Search")
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Chào mừng bạn đến với chúng tôi!</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+    <!-- Header Section Begin -->
+    <header class="header" style=" position: fixed; z-index:10; width: 100%">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__logo">
+                        <a href="#"><img class="head_logo" src="~/images/anh/logo.png" width: "75" height="75" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li class=""><a href="@Url.Action("Index", "Home")">Trang chủ</a></li>
+                            <li>
+                                @Html.ActionLink("Sản phẩm", "ShowSpAll", "Sanpham")
+                                <ul class="dropdown">
+                                    @Html.Action("Loai", "Home")
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Info", "Home")">Giới thiệu</a>
+                            </li>
+
+                            <li><a href="@Url.Action("Contacts", "Home")">Liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="header__nav__option">
+                        <a href="@Url.Action("FormLogin", "Login")">Đăng nhập</a>
+                        <a href="@Url.Action("Index", "Cart")">
+                            @Html.Action("GiohangPartial", "Cart", null)
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+    </header>
+
+    <!-- Header Section End -->
+    <div class="container">
+
+        <div style="height:100px"> </div>
+        @RenderBody()
+
+    </div>
+
+
+    <!-- Latest Blog Section End -->
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="footer__about">
+                        <p>The Hyper Kid</p>
+                        <a href="#"><img src="~/images/icons/payment.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="#">Cửa hàng quần áo</a></li>
+                            <li><a href="#">Mẫu giày thịnh hành</a></li>
+                            <li><a href="#">Phụ kiện</a></li>
+                            <li><a href="#">Khuyến mãi</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Shopping</h6>
+                        <ul>
+                            <li><a href="@Url.Action("Contacts","Home")">Liên hệ với chúng tôi</a></li>
+                            <li><a href="#">Hình thức thanh toán</a></li>
+                            <li><a href="#">Vận chuyển</a></li>
+                            <li><a href="#">Đổi trả</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h6>Thư Mới</h6>
+                        <div class="footer__newslatter">
+                            <p>Hãy là người đầu tiên nhận được Sale!</p>
+                            <form action="#">
+                                <input type="text" placeholder="Nhập mail của bạn....">
+                                <button type="submit">
+                                    <img src="~/images/icons/sent-email.svg" alt="Bootstrap" width="32" height="32" />
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="footer__copyright__text">
+                        <p>
+                            ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            The Hyper Kid make by <a href="#" target="_blank">blood</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+    <!--Back Top  -->
+    <style>
+        #backTop {
+            width: 40px;
+            height: 40px;
+            background: #ffffff;
+            color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: solid 1px;
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+    <div id="backTop">
+        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- Search End -->
+    <!-- Js Plugins -->
+
+
+    <script src="~/Content/js/jquery-3.6.1.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/jquery.nice-select.min.js"></script>
+    <script src="~/Content/js/jquery.nicescroll.min.js"></script>
+    <script src="~/Content/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/Content/js/jquery.countdown.min.js"></script>
+    <script src="~/Content/js/jquery.slicknav.js"></script>
+    <script src="~/Content/js/mixitup.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+
+
+
+</body>
+
+</html>
+<script>
+    jQuery(function ($) {
+        $(document).ready(function () {
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop()) {
+                    $('#backTop').fadeIn();
+                } else {
+                    $('#backTop').fadeOut();
+                }
+            });
+            $("#backTop").click(function () {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+        });
+    });
+</script>

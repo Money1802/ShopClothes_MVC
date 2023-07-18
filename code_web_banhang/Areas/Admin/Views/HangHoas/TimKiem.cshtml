@@ -1,0 +1,77 @@
+﻿@model IEnumerable<code_web_banhang.Models.HangHoa>
+
+@{
+    ViewBag.Title = "TimKiem";
+    Layout = "~/Views/AdminLayout/Adminlayout.cshtml";
+}
+
+<h2>TimKiem</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenHH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonVi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChatLieu)
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonVi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            <img src="~/images/@item.Hinh" width="50%" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChatLieu)
+        </td>
+        <td>
+            @Html.ActionLink("EditSP", "EditSP", new { id=item.MaHH }) |
+            @Html.ActionLink("DetailsSP", "DetailsSP", new { id=item.MaHH }) |
+            @Html.ActionLink("DeleteSP", "DeleteSP", new { id=item.MaHH })
+        </td>
+    </tr>
+}
+
+</table>

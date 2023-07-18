@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>Admin</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" style="background_:#fff" sizes="180x180" href="vendors/images1/Logo_icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="vendors/images1/Logo_icon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="vendors/images1/Logo_icon.png">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/datatables/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/datatables/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendors/styles/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+
+</head>
+
+<body>
+    <div class="pre-loader">
+        <div class="pre-loader-box">
+            <div class="loader-logo">
+                <img src="~/images/anh/logo.png" width="200px" height="500px" alt="">
+            </div>
+            <div class='loader-progress' id="progress_div">
+                <div class='bar' id='bar1'></div>
+            </div>
+            <div class='percent' id='percent1'>0%</div>
+            <div class="loading-text">
+                Đang Tải...
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-left">
+            <div class="menu-icon dw dw-menu"></div>
+            <div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+            <div class="header-search">
+                @Html.Partial("View")
+            </div>
+        </div>
+        <div class="header-right">
+            <!-- Cài Đặt        -->
+            <div class="dashboard-setting user-notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
+                        <i class="dw dw-settings2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="user-notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+                        <i class="icon-copy dw dw-notification"></i>
+                        <span class="badge notification-active"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="notification-list mx-h-350 customscroll">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <h3>Thông Báo 1</h3>
+                                        <p>Cập Nhật Phần Mềm 1...</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>Thông Báo 1</h3>
+                                        <p>Cập Nhật Phần Mềm 1...</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>Thông Báo 1</h3>
+                                        <p>Cập Nhật Phần Mềm 1...</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="user-info-dropdown">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        <span class="user-icon">
+                            <img src="~/images/anh/logo.png" alt="">
+                        </span>
+                        <span class="user-name">ADMIN</span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                        <a class="dropdown-item" href="#"><i class="dw dw-user1"></i> Hồ Sơ</a>
+                        <a class="dropdown-item" href="#"><i class="dw dw-settings2"></i> Cài Đặt</a>
+                        <a class="dropdown-item" href="#"><i class="dw dw-help"></i>Trợ Giúp</a>
+                        <a class="dropdown-item" href="/Login/Logout"><i class="dw dw-logout"></i> Thoát</a>
+                    </div>
+                </div>
+            </div>
+            <div style="width:40px;">
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="left-side-bar">
+        <div class="brand-logo">
+            <a href="index.html">
+                @*<img src="~/images/anh/logo.png" alt="" class="light-logo">*@
+            </a>
+            <div class="close-sidebar" data-toggle="left-sidebar-close">
+                <i class="ion-close-round"></i>
+            </div>
+        </div>
+        <div class="menu-block customscroll">
+            <div class="sidebar-menu">
+                <ul id="accordion-menu">
+
+                    <li>
+                        <a href="@Url.Action("Chaomung", "HangHoas")" class="dropdown-toggle no-arrow">
+                            <span class="micon dw dw-house-1"></span><span class="mtext">TRANG CHỦ</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-edit2"></span><span class="mtext">Trang chính</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="@Url.Action("ShowSP", "HangHoas")">Danh sách sản phẩm</a></li>
+
+                        </ul>
+                        <ul class="submenu">
+                            <li><a href="@Url.Action("Index", "HoaDons")">Danh sách hóa đơn</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-library"></span><span class="mtext">Tables</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">GÌ ĐÓ</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- ------------------------------------------ -->
+                    <div class="dropdown-divider"></div>
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-browser2"></span><span class="mtext">Gì Đó</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">GÌ ĐÓ</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-copy"></span><span class="mtext">GÌ ĐÓ</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">GÌ ĐÓ</a></li>
+
+                        </ul>
+                    </li>
+
+                    <!-- ------------------------------------------ -->
+                    <li>
+                        <div class="dropdown-divider"></div>
+                    </li>
+                    <li>
+                        <div class="sidebar-small-cap">THÊM</div>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="dropdown-toggle">
+                            <span class="micon dw dw-edit-2"></span><span class="mtext">GÌ ĐÓ</span>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="#">GÌ ĐÓ</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="main-container">
+
+        <div class="pd-ltr-20">
+            <div class="card-box pd-20 height-100-p mb-30">
+                @RenderBody()
+            </div>
+
+            <div class="card-box mb-30">
+                <h2 class="h4 pd-20">Các Sản Phẩm</h2>
+
+            </div>
+            <div class="footer-wrap pd-20 mb-20 card-box">
+                <h6>Vui lòng kiểm tra kỹ trước khi thoát!</h6>
+            </div>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="~/vendors/scripts/core.js"></script>
+    <script src="~/vendors/scripts/script.min.js"></script>
+    <script src="~/vendors/scripts/process.js"></script>
+    <script src="~/vendors/scripts/layout-settings.js"></script>
+    <script src="~/vendors/apexcharts/apexcharts.min.js"></script>
+    <script src="~/vendors/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="~/vendors/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/vendors/datatables/js/dataTables.responsive.min.js"></script>
+    <script src="~/vendors/datatables/js/responsive.bootstrap4.min.js"></script>
+    <script src="~/vendors/scripts/dashboard.js"></script>
+</body>
+
+</html>

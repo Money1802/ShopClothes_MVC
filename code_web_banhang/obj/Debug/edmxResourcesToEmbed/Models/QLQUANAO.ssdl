@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QL_QUANAOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ChiTietHDs">
+    <Key>
+      <PropertyRef Name="MaCT" />
+    </Key>
+    <Property Name="MaCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaHD" Type="int" Nullable="false" />
+    <Property Name="MaHH" Type="int" Nullable="false" />
+    <Property Name="DonGia" Type="float" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="MaSize" Type="nvarchar(max)" />
+    <Property Name="GiaGiam" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CTKICKCOSPs">
+    <Key>
+      <PropertyRef Name="MACTKC" />
+    </Key>
+    <Property Name="MACTKC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAHH" Type="int" Nullable="false" />
+    <Property Name="MAKC" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HANGHOA_BINHLUAN">
+    <Key>
+      <PropertyRef Name="MABL" />
+    </Key>
+    <Property Name="MABL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAHH" Type="int" />
+    <Property Name="NGAYCHON" Type="datetime" />
+    <Property Name="TEN" Type="nvarchar(max)" />
+    <Property Name="NOIDUNG" Type="nvarchar(max)" />
+    <Property Name="TIEUDE" Type="nvarchar(max)" />
+    <Property Name="KIEMDUYET" Type="bit" />
+  </EntityType>
+  <EntityType Name="HANGHOA_HINH">
+    <Key>
+      <PropertyRef Name="MAHINH" />
+    </Key>
+    <Property Name="MAHINH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MAHH" Type="int" />
+    <Property Name="URLHINH" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="HangHoas">
+    <Key>
+      <PropertyRef Name="MaHH" />
+    </Key>
+    <Property Name="MaHH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHH" Type="nvarchar(max)" />
+    <Property Name="MaLoai" Type="int" Nullable="false" />
+    <Property Name="DonVi" Type="nvarchar(max)" />
+    <Property Name="DonGia" Type="float" Nullable="false" />
+    <Property Name="Hinh" Type="nvarchar(max)" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="GioiTinh" Type="bit" />
+    <Property Name="ChatLieu" Type="nvarchar(max)" />
+    <Property Name="MAKM" Type="int" />
+  </EntityType>
+  <EntityType Name="HoaDons">
+    <Key>
+      <PropertyRef Name="MaHD" />
+    </Key>
+    <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKH" Type="nvarchar(max)" />
+    <Property Name="NgayDat" Type="datetime" Nullable="false" />
+    <Property Name="NgayGiao" Type="datetime" Nullable="false" />
+    <Property Name="TenNguoiNhan" Type="nvarchar(max)" />
+    <Property Name="DiaChiNhan" Type="nvarchar(max)" />
+    <Property Name="HTTT" Type="nvarchar(max)" />
+    <Property Name="HTVC" Type="nvarchar(max)" />
+    <Property Name="PhiVC" Type="float" Nullable="false" />
+    <Property Name="TrangThai" Type="int" Nullable="false" />
+    <Property Name="GhiChu" Type="nvarchar(max)" />
+    <Property Name="MaNV" Type="nvarchar(max)" />
+    <Property Name="TongTien" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KHUYENMAIs">
+    <Key>
+      <PropertyRef Name="MAKM" />
+    </Key>
+    <Property Name="MAKM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGAYBD" Type="datetime" />
+    <Property Name="NGAYKT" Type="datetime" />
+    <Property Name="GIAGIAM" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KICHCOes">
+    <Key>
+      <PropertyRef Name="MAKC" />
+    </Key>
+    <Property Name="MAKC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KICHCO1" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Loais">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="TenTaiKhoan" />
+    </Key>
+    <Property Name="TenTaiKhoan" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MatKhau" Type="varchar" MaxLength="100" />
+    <Property Name="XacNhanMK" Type="varchar" MaxLength="100" />
+    <Property Name="Ho_Ten" Type="nvarchar(max)" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="SoDienThoai" Type="varchar" MaxLength="10" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="Xa_Phuong" Type="nvarchar" MaxLength="50" />
+    <Property Name="Quan_Huyen" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tinh_TP" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaQuyen" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_ChiTietHDs_dbo_HangHoas_MaHH">
+    <End Role="HangHoas" Type="Self.HangHoas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietHDs" Type="Self.ChiTietHDs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoas">
+        <PropertyRef Name="MaHH" />
+      </Principal>
+      <Dependent Role="ChiTietHDs">
+        <PropertyRef Name="MaHH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ChiTietHDs_dbo_HoaDons_MaHD">
+    <End Role="HoaDons" Type="Self.HoaDons" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ChiTietHDs" Type="Self.ChiTietHDs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HoaDons">
+        <PropertyRef Name="MaHD" />
+      </Principal>
+      <Dependent Role="ChiTietHDs">
+        <PropertyRef Name="MaHD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CTKICKCOSPs_dbo_HangHoas_MAHH">
+    <End Role="HangHoas" Type="Self.HangHoas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTKICKCOSPs" Type="Self.CTKICKCOSPs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoas">
+        <PropertyRef Name="MaHH" />
+      </Principal>
+      <Dependent Role="CTKICKCOSPs">
+        <PropertyRef Name="MAHH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_CTKICKCOSPs_dbo_KICHCOes_MAKC">
+    <End Role="KICHCOes" Type="Self.KICHCOes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CTKICKCOSPs" Type="Self.CTKICKCOSPs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KICHCOes">
+        <PropertyRef Name="MAKC" />
+      </Principal>
+      <Dependent Role="CTKICKCOSPs">
+        <PropertyRef Name="MAKC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_HANGHOA_BINHLUAN_dbo_HangHoas_MAHH">
+    <End Role="HangHoas" Type="Self.HangHoas" Multiplicity="0..1" />
+    <End Role="HANGHOA_BINHLUAN" Type="Self.HANGHOA_BINHLUAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoas">
+        <PropertyRef Name="MaHH" />
+      </Principal>
+      <Dependent Role="HANGHOA_BINHLUAN">
+        <PropertyRef Name="MAHH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_HANGHOA_HINH_dbo_HangHoas_MAHH">
+    <End Role="HangHoas" Type="Self.HangHoas" Multiplicity="0..1" />
+    <End Role="HANGHOA_HINH" Type="Self.HANGHOA_HINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangHoas">
+        <PropertyRef Name="MaHH" />
+      </Principal>
+      <Dependent Role="HANGHOA_HINH">
+        <PropertyRef Name="MAHH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_HangHoas_dbo_KHUYENMAIs_MAKM">
+    <End Role="KHUYENMAIs" Type="Self.KHUYENMAIs" Multiplicity="0..1" />
+    <End Role="HangHoas" Type="Self.HangHoas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHUYENMAIs">
+        <PropertyRef Name="MAKM" />
+      </Principal>
+      <Dependent Role="HangHoas">
+        <PropertyRef Name="MAKM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_HangHoas_dbo_Loais_MaLoai">
+    <End Role="Loais" Type="Self.Loais" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HangHoas" Type="Self.HangHoas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Loais">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="HangHoas">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QL_QUANAOModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChiTietHDs" EntityType="Self.ChiTietHDs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CTKICKCOSPs" EntityType="Self.CTKICKCOSPs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANGHOA_BINHLUAN" EntityType="Self.HANGHOA_BINHLUAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HANGHOA_HINH" EntityType="Self.HANGHOA_HINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HangHoas" EntityType="Self.HangHoas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HoaDons" EntityType="Self.HoaDons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHUYENMAIs" EntityType="Self.KHUYENMAIs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KICHCOes" EntityType="Self.KICHCOes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loais" EntityType="Self.Loais" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_ChiTietHDs_dbo_HangHoas_MaHH" Association="Self.FK_dbo_ChiTietHDs_dbo_HangHoas_MaHH">
+      <End Role="HangHoas" EntitySet="HangHoas" />
+      <End Role="ChiTietHDs" EntitySet="ChiTietHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ChiTietHDs_dbo_HoaDons_MaHD" Association="Self.FK_dbo_ChiTietHDs_dbo_HoaDons_MaHD">
+      <End Role="HoaDons" EntitySet="HoaDons" />
+      <End Role="ChiTietHDs" EntitySet="ChiTietHDs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CTKICKCOSPs_dbo_HangHoas_MAHH" Association="Self.FK_dbo_CTKICKCOSPs_dbo_HangHoas_MAHH">
+      <End Role="HangHoas" EntitySet="HangHoas" />
+      <End Role="CTKICKCOSPs" EntitySet="CTKICKCOSPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_CTKICKCOSPs_dbo_KICHCOes_MAKC" Association="Self.FK_dbo_CTKICKCOSPs_dbo_KICHCOes_MAKC">
+      <End Role="KICHCOes" EntitySet="KICHCOes" />
+      <End Role="CTKICKCOSPs" EntitySet="CTKICKCOSPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_HANGHOA_BINHLUAN_dbo_HangHoas_MAHH" Association="Self.FK_dbo_HANGHOA_BINHLUAN_dbo_HangHoas_MAHH">
+      <End Role="HangHoas" EntitySet="HangHoas" />
+      <End Role="HANGHOA_BINHLUAN" EntitySet="HANGHOA_BINHLUAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_HANGHOA_HINH_dbo_HangHoas_MAHH" Association="Self.FK_dbo_HANGHOA_HINH_dbo_HangHoas_MAHH">
+      <End Role="HangHoas" EntitySet="HangHoas" />
+      <End Role="HANGHOA_HINH" EntitySet="HANGHOA_HINH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_HangHoas_dbo_KHUYENMAIs_MAKM" Association="Self.FK_dbo_HangHoas_dbo_KHUYENMAIs_MAKM">
+      <End Role="KHUYENMAIs" EntitySet="KHUYENMAIs" />
+      <End Role="HangHoas" EntitySet="HangHoas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_HangHoas_dbo_Loais_MaLoai" Association="Self.FK_dbo_HangHoas_dbo_Loais_MaLoai">
+      <End Role="Loais" EntitySet="Loais" />
+      <End Role="HangHoas" EntitySet="HangHoas" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
